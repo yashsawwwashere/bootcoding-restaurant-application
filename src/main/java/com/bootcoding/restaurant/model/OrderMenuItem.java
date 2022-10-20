@@ -1,10 +1,21 @@
 package com.bootcoding.restaurant.model;
 
-public class OrderMenuItem {  private String menuItem;
+public class OrderMenuItem {
+    public long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(long orderId) {
+        this.orderId = orderId;
+    }
+
+    private long orderId;
+    private String menuItem;
     private int quantity;
     private double price;
 
     private boolean isVeg;
+
 
     public boolean isVeg() {
         return isVeg;

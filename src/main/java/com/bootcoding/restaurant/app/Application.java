@@ -1,5 +1,5 @@
 package com.bootcoding.restaurant.app;
-import com.bootcoding.restaurant.dao.CustomerDAO;
+import com.bootcoding.restaurant.dao.*;
 import com.bootcoding.restaurant.model.Customer;
 import com.bootcoding.restaurant.model.Order;
 import com.bootcoding.restaurant.model.Vendor;
@@ -9,10 +9,19 @@ import java.util.Date;
 
 public class Application {
     public static void main(String[] args) {
+        VendorDAO vd=new VendorDAO();
+        vd.createTable();
+        OrderMenuItemDAO omi=new OrderMenuItemDAO();
+        omi.createTable();
+        OrderDAO order=new OrderDAO();
+        order.createTable();
+        MenuItemDAO mi=new MenuItemDAO();
+        mi.createTable();
         CustomerDAO cs=new CustomerDAO();
         cs.createTable();
 
-        for(int i=501; i< 1000; i++){
+
+       /* for(int i=501; i< 1000; i++){
             Customer customer = new Customer();
             customer.setCustomerId(i);
             customer.setName("Customer" + i);
@@ -23,7 +32,7 @@ public class Application {
             customer.setEmailId("dsdhdsaga@gmail.com");
             cs.createCustomer(customer);
             System.out.println("inserted " + i);
-        }
+        }*/
     }
     public void testData(){
         Customer ramesh = new Customer();

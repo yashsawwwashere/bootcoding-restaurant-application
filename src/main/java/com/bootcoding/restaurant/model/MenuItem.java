@@ -1,6 +1,7 @@
 package com.bootcoding.restaurant.model;
 
-public class MenuItem { private long menuItemId;
+public class MenuItem {
+    private long menuItemId;
     private String menuItem;
     private double price;
     private String category;
