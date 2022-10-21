@@ -2,9 +2,20 @@ package com.bootcoding.restaurant.model;
 
 public class MenuItem {
     private long menuItemId;
+
+    private long vendorId;
     private String menuItem;
     private double price;
     private String category;
+
+    public long getVendorId() {
+        return vendorId;
+    }
+
+    public void setVendorId(long vendorId) {
+        this.vendorId = vendorId;
+    }
+
     private boolean isVeg;
 
     public long getMenuItemId() {

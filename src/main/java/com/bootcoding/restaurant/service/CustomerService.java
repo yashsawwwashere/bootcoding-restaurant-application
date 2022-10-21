@@ -9,6 +9,7 @@ import com.bootcoding.restaurant.util.PhoneNumberGenerator;
 
 
 public class CustomerService {
+    CustomerDAO cs=new CustomerDAO();
     public void createDummyCustomers(){
         for(int i = 0; i < 100; i++){
             Customer customer = new Customer();
@@ -21,7 +22,6 @@ public class CustomerService {
             customer.setPhoneNumber(PhoneNumberGenerator.getPhoneNumber());
             //TODO: Insert Customer into Database
 
-            CustomerDAO cs=new CustomerDAO();
             cs.insertCustomer(customer);
 
 
@@ -35,5 +35,9 @@ public class CustomerService {
             System.out.println("Email Id : " + customer.getEmailId());
             System.out.println("Phone : " + customer.getPhoneNumber());
         }
+    }
+
+    public void createTable() {
+        cs.createTable();
     }
 }

@@ -14,11 +14,11 @@ public class VendorDAO {
         daoService = new DAOService();
     }
 
-    public void insertCustomer(Vendor vendor) {
+    public void insertVendor(Vendor vendor) {
         try {
             Connection con = daoService.getConnection();
             if(!daoService.exists(con, TABLE_NAME, vendor.getVendorId())) {
-                String sql = "INSERT INTO " + TABLE_NAME + " VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                String sql = "INSERT INTO " + TABLE_NAME + " VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                 PreparedStatement ps = con.prepareStatement(sql);
                 ps.setLong(1, vendor.getVendorId());
                 ps.setString(2, vendor.getName());
@@ -26,9 +26,10 @@ public class VendorDAO {
                 ps.setLong(4, vendor.getPhoneNumber());
                 ps.setString(5, vendor.getEmailId());
                 ps.setString(6, vendor.getCity());
-                ps.setBoolean(7, vendor.isPureVeg());
-                ps.setString(8, vendor.getCategory());
-                ps.setDouble(9, vendor.getRating());
+                ps.setString(7, vendor.getState());
+                ps.setBoolean(8, vendor.isPureVeg());
+                ps.setString(9, vendor.getCategory());
+                ps.setDouble(10, vendor.getRating());
 
 
                 ps.executeUpdate();

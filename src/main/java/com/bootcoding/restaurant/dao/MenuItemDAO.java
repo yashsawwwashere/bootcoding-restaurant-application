@@ -14,7 +14,7 @@ public class MenuItemDAO {
         daoService = new DAOService();
     }
 
-    public void insertCustomer(MenuItem menuitem) {
+    public void insertMenuItem(MenuItem menuitem) {
         try {
             Connection con = daoService.getConnection();
             if(!daoService.exists(con, TABLE_NAME, menuitem.getMenuItemId())) {

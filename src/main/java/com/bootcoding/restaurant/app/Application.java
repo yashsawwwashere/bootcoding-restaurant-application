@@ -3,22 +3,25 @@ import com.bootcoding.restaurant.dao.*;
 import com.bootcoding.restaurant.model.Customer;
 import com.bootcoding.restaurant.model.Order;
 import com.bootcoding.restaurant.model.Vendor;
+import com.bootcoding.restaurant.service.CustomerService;
+import com.bootcoding.restaurant.service.VendorMenuItemService;
+import com.bootcoding.restaurant.service.VendorService;
 
 import java.util.Date;
 
 
 public class Application {
     public static void main(String[] args) {
-        VendorDAO vd=new VendorDAO();
-        vd.createTable();
-        OrderMenuItemDAO omi=new OrderMenuItemDAO();
-        omi.createTable();
-        OrderDAO order=new OrderDAO();
-        order.createTable();
-        MenuItemDAO mi=new MenuItemDAO();
-        mi.createTable();
-        CustomerDAO cs=new CustomerDAO();
-        cs.createTable();
+
+        CustomerService customerService=new CustomerService();
+        customerService.createTable();
+        customerService.createDummyCustomers();
+
+
+        VendorService vs=new VendorService();
+        vs.createTable();
+        vs.createVendors();
+
 
 
        /* for(int i=501; i< 1000; i++){
